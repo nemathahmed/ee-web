@@ -18,7 +18,7 @@ h6 {
   font-weight: 700;
 }
 .bg-custom-1 {
-  background-color:	#a31600;}
+  background-color:	#8e1515;}
 
 .bg-custom-2 {
 background-image: linear-gradient(90deg, #004d61 50%,  #89c8e0 100%);
@@ -26,8 +26,13 @@ background-image: linear-gradient(90deg, #004d61 50%,  #89c8e0 100%);
 
 .titlebar{
   font-family: 'Source Sans Pro', sans-serif;
+  
 
 }
+
+
+
+
 .nav-item > a:hover {
   color: #d89085!important;
 }
@@ -72,7 +77,7 @@ hr.new1 {
 .ee-logo{
   width: 100%;
 }
-@media all and (min-width: 700px) {
+@media screen and (min-width: 700px) {
 .ee-logo{
   width: 700px;
 
@@ -95,6 +100,17 @@ hr.new1 {
       border-style: solid;
   }
 } 
+
+.carousel-caption {
+  left: 5%;
+  text-align: left;
+  background-color: #f2f1ebbf;
+  
+  right: auto;
+  color: #070504;
+  padding: 5px;
+  padding-right: 15px;
+}
 
 }
 header.masthead {
@@ -135,7 +151,7 @@ align-items: center;
   text-align: center;
   align-items: center;}
 .scroll-text{
-  background-color: rgba(242, 241, 235, 0.75);
+  background-color: #f2f1ebbf;
   width: 100%;
   color: #070504;
   position: absolute;
