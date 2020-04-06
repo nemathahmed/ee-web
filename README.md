@@ -1,3 +1,4 @@
-# Department of Electrical Engineering | IITI
+# Department of Electrical Engineering 
+## Indian Institute of Technology Indore
 
 
