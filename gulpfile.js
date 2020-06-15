@@ -34,7 +34,22 @@ function browserSync(done) {
   });
   done();
 }
+$(document).on('click', '.dropdown-menu', function (e) {
+  e.stopPropagation();
+});
 
+// make it as accordion for smaller screens
+if ($(window).width() < 992) {
+  $('.dropdown-menu a').click(function(e){
+    e.preventDefault();
+      if($(this).next('.submenu').length){
+        $(this).next('.submenu').toggle();
+      }
+      $('.dropdown').on('hide.bs.dropdown', function () {
+     $(this).find('.submenu').hide();
+  })
+  });
+}
 // BrowserSync reload
 function browserSyncReload(done) {
   browsersync.reload();
@@ -104,6 +119,7 @@ function watchFiles() {
   gulp.watch("./scss/**/*", css);
   gulp.watch("./**/*.html", browserSyncReload);
 }
+
 
 // Define complex tasks
 const vendor = gulp.series(clean, modules);

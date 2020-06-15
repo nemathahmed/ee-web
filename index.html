@@ -67,21 +67,50 @@
             <a class="nav-link text-white" href="index.html">Home <span class="sr-only">(current)</span></a>
           </li>
 
-          <li class="nav-item" style="padding-left:8.5px; padding-right:8.5px; ">
-            <a class="nav-link text-white" href="#">Research</a>
+          <li class="nav-item dropdown" style="padding-left:8px; padding-right:8px; ">
+            <a class="nav-link text-white dropdown-toggle" data-toggle="dropdown" href="#">Research<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a class="nav-link" href="./research/research_area.html">Research Areas</a></li>
+              <li><a class="nav-link" href="./research/laboratories.html">Staff</a></li>
+              <li><a class="dropdown-item nav-link" href="#"> Recent Publications </a>
+                <ul class="submenu dropdown-menu">
+                   <li><a class="dropdown-item nav-link" href="./research/recent_publications/">xyz</a></li>
+                   <li><a class="dropdown-item nav-link" href="./research/recent_publications/"> abs</a></li>
+                </ul>
+               </li>
+               <li><a class="dropdown-item nav-link" href="#"> Projects </a>
+                <ul class="submenu dropdown-menu">
+                   <li><a class="dropdown-item nav-link" href="./research/projects/">xyz</a></li>
+                   <li><a class="dropdown-item nav-link" href="./research/projects/"> abs</a></li>
+                </ul>
+               </li>
+           </ul>
           </li>
 
           <li class="nav-item dropdown" style="padding-left:8px; padding-right:8px; ">
             <a class="nav-link text-white dropdown-toggle" data-toggle="dropdown" href="#">People<span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a class="nav-link" href="./people/faculty.html">Faculty</a></li>
-              <li><a class="nav-link" href="#">Students</a></li>
-              <li><a class="nav-link" href="#">Staff</a></li>
+              <li><a class="nav-link" href="./people/staff.html">Staff</a></li>
+              <li><a class="dropdown-item nav-link" href="#"> PhD Students </a>
+                <ul class="submenu dropdown-menu">
+                   <li><a class="dropdown-item nav-link" href="./people/Phd_students/signal.html">Signal Processing </a></li>
+                   <li><a class="dropdown-item nav-link" href="./people/Phd_students/micro_nano.html"> Micro/Nano Electronics</a></li>
+                   <li><a class="dropdown-item nav-link" href="./people/Phd_students/power.html"> Power Electronics/Systems </a>
+                   </li>
+                </ul>
+               </li>
            </ul>
           </li>
 
           <li class="nav-item" style="padding-left:8px; padding-right:8px; ">
-            <a class="nav-link text-white" href="#"  >Academics</a>
+            <a class="nav-link text-white dropdown-toggle" data-toggle="dropdown" href="#">Academics<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a class="nav-link" href="./academics/programs.html">Programs</a></li>
+              <li><a class="nav-link" href="./academics/courses.html">Courses</a></li>
+              <li><a class="nav-link" href="./academics/scholarships.html">Scholarships</a></li>
+              <li><a class="nav-link" href="./academics/awards.html">Awards and Recognitions</a></li>
+           </ul>
           </li>
 
           <li class="nav-item" style="padding-left:8px; padding-right:8px; ">
@@ -97,7 +126,7 @@
           </li>
 
           <li class="nav-item" style="padding-left:8px; padding-right:8px; ">
-            <a class="nav-link text-white" href="#"  >Contact Us</a>
+            <a class="nav-link text-white" href="./contact/contact.html"  >Contact Us</a>
           </li>
         </ul>
       </div>
@@ -328,7 +357,24 @@
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+  $(document).on('click', '.dropdown-menu', function (e) {
+  e.stopPropagation();
+});
 
+// make it as accordion for smaller screens
+if ($(window).width() < 992) {
+  $('.dropdown-menu a').click(function(e){
+    e.preventDefault();
+      if($(this).next('.submenu').length){
+        $(this).next('.submenu').toggle();
+      }
+      $('.dropdown').on('hide.bs.dropdown', function () {
+     $(this).find('.submenu').hide();
+  })
+  });
+}
+</script>
 
 </body>
 
